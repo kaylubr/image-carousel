@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#container {
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+#imageContainer {
+  width: 80vw;
+  height: 80vh;
+  position: relative;
+}
+
+#imageContainer > img {
+  position: relative;
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+/* Initial render */
+#image1 {
+  display: block;
+}
+
+
+#left,
+#right {
+  position: absolute;
+  top: 40%;
+  padding: 0.5rem;
+}
+
+#left:hover,
+#right:hover {
+  cursor: pointer;
+}
+
+#left {
+  left: 1rem;
+}
+
+#right {
+  right: 1rem;
+}
+
+#imgNav {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#imgNav > span {
+  height: 10px;
+  width: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#imgNav > span:hover {
+  background-color: rgb(62, 62, 62);
+  cursor: pointer;
+}
