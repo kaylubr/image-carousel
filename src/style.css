@@ -31,16 +31,10 @@ body {
   width: 100%;
 }
 
-/* Initial render */
-#image1 {
-  display: block;
-}
-
-
 #left,
 #right {
   position: absolute;
-  top: 40%;
+  top: 45%;
   padding: 0.5rem;
 }
 
@@ -65,14 +59,10 @@ body {
 }
 
 #imgNav > span {
+  display: inline-block;
   height: 10px;
   width: 10px;
-  background-color: gray;
+  background-color: #cacaca;
   border-radius: 50%;
-  display: inline-block;
-}
-
-#imgNav > span:hover {
-  background-color: rgb(62, 62, 62);
   cursor: pointer;
 }
