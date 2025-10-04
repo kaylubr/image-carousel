@@ -1,7 +1,8 @@
 class ImageCarousel {
   static #IMAGE_COUNT = 3;
   static #imageIndex = 0;
-  
+  static #timer = setInterval(ImageCarousel.#handleImageLoop, 5000);
+
   static handleBackClick() {
     ImageCarousel.#imageIndex -= 1;
 
@@ -9,7 +10,7 @@ class ImageCarousel {
       ImageCarousel.#imageIndex = 0;
     }
 
-   ImageCarousel.#renderImage();
+    ImageCarousel.#renderImage();
     ImageCarousel.handleNavDots();
   }
 
@@ -37,6 +38,15 @@ class ImageCarousel {
     currentDot.style.backgroundColor = '#3e3e3e';
   }
   
+  static #handleImageLoop() {
+    ImageCarousel.#renderImage();
+    ImageCarousel.handleNavDots();
+    ImageCarousel.#imageIndex += 1;
+    if (ImageCarousel.#imageIndex >= ImageCarousel.#IMAGE_COUNT) {
+      ImageCarousel.#imageIndex = 0;
+    }
+  }
+
   static #resetImages() {
     const allImages = document.querySelectorAll('#imageContainer > img');
     allImages.forEach(image => {
@@ -60,6 +70,7 @@ class ImageCarousel {
     const firstNavDot = document.querySelector('#imgNav > span:first-of-type');
     image.style.display = 'block';
     firstNavDot.style.backgroundColor = '#3e3e3e';
+    
   }
 }
 

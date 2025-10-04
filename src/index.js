@@ -5,6 +5,7 @@ const forwardBtn = document.querySelector('#right');
 const backBtn = document.querySelector('#left');
 const navDots = document.querySelectorAll('#imgNav > span');
 
+// Navigation
 backBtn.addEventListener('click', () => ImageCarousel.handleBackClick());
 forwardBtn.addEventListener('click', () => ImageCarousel.handleForwardClick());
 navDots.forEach(nav => {
@@ -14,6 +15,7 @@ navDots.forEach(nav => {
   });
 })
 
+// Runs initial render of the page
 document.addEventListener('DOMContentLoaded', () => {
   ImageCarousel.initialRender();
 })
