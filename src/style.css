@@ -7,15 +7,25 @@
 }
 
 body {
+  background-color: #222222;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 #container {
-  border: solid 1px black;
+  border: solid 2rem #0a0a0a;
   border-radius: 5px;
+}
+
+#stand {
+  width: 500px;
+  border-left: 20px dotted transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 50px solid #0a0a0a;
 }
 
 #imageContainer {
